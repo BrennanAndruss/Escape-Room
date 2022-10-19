@@ -70,25 +70,33 @@ public class EscapeRoom
 	    /* Your code here */
       
       String cmd = ui.getValidInput(validCommands);
-      if(cmd.equals(validCommands[0]))
+
+      // Move commands
+      if(cmd.equals(validCommands[0]) || cmd.equals(validCommands[4]))
       {
         // move right
         game.movePlayer(60, 0);
       }
-      else if (cmd.equals(validCommands[1]))
+      else if (cmd.equals(validCommands[1]) || cmd.equals(validCommands[5]))
       {
         // move left
         game.movePlayer(-60, 0);
       }
-      else if (cmd.equals(validCommands[2]))
+      else if (cmd.equals(validCommands[2]) || cmd.equals(validCommands[6]))
       {
         // move up
         game.movePlayer(0, -60);
       }
-      else if (cmd.equals(validCommands[3]))
+      else if (cmd.equals(validCommands[3]) || cmd.equals(validCommands[7]))
       {
         // move down
         game.movePlayer(0, 60);
+      }
+      
+      // Score fuctions
+      if(cmd.equals(validCommands[16]) || cmd.equals(validCommands[17]))
+      {
+        score += game.pickupPrize();
       }
     }
 
