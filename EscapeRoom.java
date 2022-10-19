@@ -63,12 +63,33 @@ public class EscapeRoom
   
     // set up game
     boolean play = true;
+    UserInput ui = new UserInput();
     while (play)
     {
       /* TODO: get all the commands working */
-	  /* Your code here */
-    
+	    /* Your code here */
       
+      String cmd = ui.getValidInput(validCommands);
+      if(cmd.equals(validCommands[0]))
+      {
+        // move right
+        game.movePlayer(60, 0);
+      }
+      else if (cmd.equals(validCommands[1]))
+      {
+        // move left
+        game.movePlayer(-60, 0);
+      }
+      else if (cmd.equals(validCommands[2]))
+      {
+        // move up
+        game.movePlayer(0, -60);
+      }
+      else if (cmd.equals(validCommands[3]))
+      {
+        // move down
+        game.movePlayer(0, 60);
+      }
     }
 
   
