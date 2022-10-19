@@ -58,7 +58,7 @@ public class EscapeRoom
 
     Scanner in = new Scanner(System.in);
     String[] validCommands = { "right", "left", "up", "down", "r", "l", "u", "d",
-    "jump", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
+    "jumpright", "jr", "jumpleft", "jl", "jumpup", "ju", "jumpdown", "jd",
     "pickup", "p", "quit", "q", "replay", "help", "?"};
   
     // set up game
@@ -91,6 +91,26 @@ public class EscapeRoom
       {
         // move down
         game.movePlayer(0, 60);
+      }
+      else if(cmd.equals(validCommands[8]) || cmd.equals(validCommands[9]))
+      {
+        // jump right
+        game.movePlayer(120, 0);
+      }
+      else if (cmd.equals(validCommands[10]) || cmd.equals(validCommands[11]))
+      {
+        // jump left
+        game.movePlayer(-120, 0);
+      }
+      else if (cmd.equals(validCommands[12]) || cmd.equals(validCommands[13]))
+      {
+        // jump up
+        game.movePlayer(0, -120);
+      }
+      else if (cmd.equals(validCommands[14]) || cmd.equals(validCommands[15]))
+      {
+        // jump down
+        game.movePlayer(0, 120);
       }
       
       // Score fuctions
